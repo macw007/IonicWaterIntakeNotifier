@@ -1,0 +1,46 @@
+
+<ion-header  >
+  <ion-navbar color="primary" >
+    <ion-title>
+     Water Intake Notifier
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+  <ion-content padding="true" class="has-header waterContect">
+        <ion-list>
+          <ion-item>
+                  <ion-label floating>Enter Name</ion-label>
+                      <ion-input  [(ngModel)]="name" #ctrl="ngModel" required  type="text"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label floating>Enter Weight</ion-label>
+                      <ion-input [(ngModel)]="weight" #ctrl="ngModel" required type="number"></ion-input>
+                    </ion-item>
+
+                    <ion-item>
+                      <ion-label floating>Enter Age</ion-label>
+                      <ion-input [(ngModel)]="age" #ctrl="ngModel" required type="number"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-grid>
+                        <ion-row>
+                          <ion-col >
+                            <ion-item>
+                            <ion-label>Please select Active Work Start Time</ion-label>
+                                <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
+                                </ion-item>
+                          </ion-col>
+                          <ion-col >
+                            <ion-item>
+                            <ion-label>Please select Active Work End Time</ion-label>
+                                <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
+                                </ion-item>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-item>
+            </ion-list>
+            <div padding>
+              <button (click)="calculte()" ion-button large> Calculate </button>
+            </div>
+  </ion-content>

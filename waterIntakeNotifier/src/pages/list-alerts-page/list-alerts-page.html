@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ListAlertsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary" >
+    <ion-title>ListAlertsPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-list (ng-if)="info!==undefined">
+  <ion-item-sliding>
+    <ion-item>
+    <ion-label>
+    <ion-icon name="person" item-left></ion-icon>
+      {{info.name}} needs to drink {{info.calculatedAmount}}
+    </ion-label>
+    <ion-toggle  color="secondary" [(ngModel)]="info.isActive"></ion-toggle>
+    </ion-item>
+ 
+<ion-item-options>
+      <button (click)="presentConfirm()" color="danger" ion-button="" class="disable-hover button button-ios button-default button-default-ios button-ios-danger"><span class="button-inner">
+          <ion-icon name="trash" role="img" class="icon icon-ios ion-ios-trash" aria-label="trash"></ion-icon>
+          Delete
+        </span><div class="button-effect"></div></button>
+    </ion-item-options>
+  </ion-item-sliding>
+
+</ion-list>
+</ion-content>
