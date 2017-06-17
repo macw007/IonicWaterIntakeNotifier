@@ -5,4 +5,6 @@ export class WaterValues {
      age:number;
      isActive:boolean;
      calculatedAmount:string;
+     startTime:string;
+     endTime:string;
 }

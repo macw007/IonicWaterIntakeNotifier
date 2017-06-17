@@ -25,13 +25,41 @@ export class ListAlertsPage {
   ionViewWillEnter() {
    this.store.CkeckRecords().then((d:WaterValues)=>{
         this.info=d;      
-        //console.log(this.info);
       }); 
+  }
+  ToggleNotification(isActive:boolean)
+  {
+    if(isActive)
+    {
+        //this.store.SchduleAlert("Frank Should Drink 2oz of water Now");
+    }
+    else
+    {
+          let alert = this.alertCtrl.create({
+          title: 'Cancel Notofication',
+          message: 'Are you sure you want to Stop this notication?',
+          buttons: [
+            {
+              text: 'Cancel',
+              role: 'cancel',
+              handler:()=>{ this.info.isActive=true;}
+            },
+            {
+              text: 'Yes',
+              handler: () => {
+                this.info.isActive=false;
+                //this.store.cancelNotification();
+              }
+            }
+          ]
+        });
+        alert.present();      
+    }   
   }
   RemoveNotification():void
   {
-    this.store.removeNotification();
-    this.navCtrl.setRoot(HomePage);
+    this.store.removeNotification().then(()=>
+    this.navCtrl.setRoot(HomePage));
   }
 
   presentConfirm() {

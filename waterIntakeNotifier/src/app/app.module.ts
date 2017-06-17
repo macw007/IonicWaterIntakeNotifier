@@ -10,6 +10,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {StorageCheck} from '../providers/storageCheck';
 import{ListAlertsPage} from'../pages/list-alerts-page/list-alerts-page';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import{ListAlertsPage} from'../pages/list-alerts-page/list-alerts-page';
     StatusBar,
     SplashScreen,
     StorageCheck,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

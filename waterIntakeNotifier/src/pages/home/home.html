@@ -22,22 +22,12 @@
                       <ion-input [(ngModel)]="age" #ctrl="ngModel" required type="number"></ion-input>
                     </ion-item>
                     <ion-item>
-                      <ion-grid>
-                        <ion-row>
-                          <ion-col >
-                            <ion-item>
-                            <ion-label>Please select Active Work Start Time</ion-label>
-                                <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
-                                </ion-item>
-                          </ion-col>
-                          <ion-col >
-                            <ion-item>
-                            <ion-label>Please select Active Work End Time</ion-label>
-                                <ion-datetime displayFormat="MM/DD/YYYY" ></ion-datetime>
-                                </ion-item>
-                          </ion-col>
-                        </ion-row>
-                      </ion-grid>
+                      <ion-label floating>Active Start Time</ion-label>
+                      <ion-datetime displayFormat="h:mm A" [(ngModel)]="startTime"></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label floating>Active End Time</ion-label>
+                      <ion-datetime displayFormat="h:mm A" [(ngModel)]="endTime"></ion-datetime>
                     </ion-item>
             </ion-list>
             <div padding>

@@ -21,7 +21,7 @@
     <ion-icon name="person" item-left></ion-icon>
       {{info.name}} needs to drink {{info.calculatedAmount}}
     </ion-label>
-    <ion-toggle  color="secondary" [(ngModel)]="info.isActive"></ion-toggle>
+    <ion-toggle  color="secondary" [(ngModel)]="info.isActive"  (ionChange)="ToggleNotification(info.isActive)"></ion-toggle>
     </ion-item>
  
 <ion-item-options>
